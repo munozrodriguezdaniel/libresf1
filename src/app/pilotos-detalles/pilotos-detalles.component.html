@@ -1,0 +1,46 @@
+<div *ngIf="piloto != undefined">
+	<h2>Detalles del piloto</h2>
+	<table>
+		<tr>
+			<th>Numero:</th>
+			<th>{{piloto.id}}</th>
+		</tr>
+		<tr>
+			<th>Nombre:</th>
+			<th>{{piloto.nombre}}</th>
+		</tr>
+		<tr>
+			<th>Fecha de nacimiento:</th>
+			<th>{{piloto.fecha_n}}</th>
+		</tr>
+		<tr>
+			<th>Numero de carreras:</th>
+			<th><input #pilotoModelo_m1  [(ngModel)]="piloto.modelo_m" placeholder="nombre"/></th>
+		</tr>
+		<tr>
+			<th>Numero de carreras:</th>
+			<th><input #pilotoNum_carrera1  [(ngModel)]="piloto.num_carrera" placeholder="nombre"/></th>
+		</tr>
+		<tr>
+			<th>Numero de victorias:</th>
+			<th><input #pilotoNum_victoria1  [(ngModel)]="piloto.num_victoria"  /></th>
+		</tr>
+		<tr>
+			<th>Numero de pole:</th>
+			<th><input #pilotoNum_pole1 [(ngModel)]="piloto.num_pole"  /></th>
+		</tr>
+		<tr>
+			<th>Numero de podio:</th>
+			<th><input #pilotoNum_podio1 [(ngModel)]="piloto.num_podio"/></th>
+		</tr>
+		<tr>
+			<th>Escuderia:</th>
+			<th><input #pilotoEscuderia1 [(ngModel)]="piloto.escuderia"/></th>
+		</tr>
+		<tr>
+			<th><button (click)="goBack()">Volver atras</button></th>
+			<th><button (click)="save(pilotoModelo_m1.value,pilotoNum_carrera1.value,pilotoNum_victoria1.value,pilotoNum_pole1.value,pilotoNum_podio1.value,pilotoEscuderia1.value)">Guardar cambios</button>
+			</th>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,72 @@
+<div>
+	<p>Si desea saber los detalles del piloto clica en su nombre</p>
+	<table class="table1">
+		<tr>
+			<th>Numero</th>
+			<th>Piloto</th>
+			<th>Nombre</th>
+			<th>Eliminar</th>
+		</tr>
+		<tr *ngFor="let piloto of piloto">
+			<td>{{piloto.id}}</td>
+			<td><img src="{{piloto.url}}" alt="HTML5 Icon" height="150" /></td>
+			<td><a routerLink="/detail2/{{piloto.id}}">{{piloto.nombre}}</a></td>
+			<td>
+				<button class="delete" title="delete piloto"
+    (click)="delete(piloto)">x</button>
+			</td>
+		</tr>
+	</table>
+</div>
+<div>
+	<p>Si desea añadir un nuevo piloto rellena el siguiente formulario</p>
+	<table class="table1">
+		<tr>
+			<th>ID:</th>
+			<th><input #pilotoId /></th>
+		</tr>
+		<tr>
+			<th>Nombre:</th>
+			<th><input #pilotoNombre /></th>
+		</tr>
+		<tr>
+			<th>Fecha de nacimiento:</th>
+			<th><input #pilotoFecha_n /></th>
+		</tr>
+		<tr>
+			<th>Modelo:</th>
+			<th><input #pilotoModelo_m /></th>
+		</tr>
+		<tr>
+			<th>Numero de carreras:</th>
+			<th><input #pilotoNum_carrera /></th>
+		</tr>
+		<tr>
+			<th>Numero de victorias:</th>
+			<th><input #pilotoNum_victoria /></th>
+		</tr>
+		<tr>
+			<th>Numero de pole:</th>
+			<th><input #pilotoNum_pole /></th>
+		</tr>
+		<tr>
+			<th>Numero de podio:</th>
+			<th><input #pilotoNum_podio /></th>
+		</tr>
+		<tr>
+			<th>Escuderia:</th>
+			<th><input #pilotoEscuderia /></th>
+		</tr>
+		<tr>
+			<th>Url:</th>
+			<th><input #pilotoUrl /></th>
+		</tr>
+		<tr>
+			<th colspan="2">
+				<button (click)="add(pilotoId.value, pilotoNombre.value, pilotoFecha_n.value, pilotoModelo_m.value, pilotoNum_carrera.value, pilotoNum_victoria.value, pilotoNum_podio.value, pilotoNum_pole.value, pilotoEscuderia.value, pilotoUrl.value); pilotoId.value=''; pilotoModelo_m.value=''; pilotoFecha_n.value=''; pilotoNombre.value=''; pilotoNum_carrera.value=''; pilotoNum_victoria.value=''; pilotoNum_podio.value=''; pilotoNum_pole.value=''; pilotoEscuderia.value=''; pilotoUrl.value=''">
+      Añadir piloto
+      </button>
+			</th>
+		</tr>
+	</table>
+</div>

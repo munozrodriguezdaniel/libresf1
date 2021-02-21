@@ -1,0 +1,41 @@
+<div *ngIf="monoplaza != undefined">
+	<!--  la condición devuelve lo mismo si ponemos solo "hero"-->
+	<h2>Detalles del monoplaza</h2>
+	<table>
+		<th colspan="2"><img src="{{monoplaza.url}}" alt="HTML5 Icon" width="200" /></th>
+			<tr>
+				<th>Numero:</th>
+				<th>{{monoplaza.id}}</th>
+			</tr>
+			<tr>
+				<th>Modelo:</th>
+				<th>{{monoplaza.modelo}}</th>
+			</tr>
+			<tr>
+				<th>Piloto:</th>
+				<th>
+					<a routerLink="/detail2/{{monoplaza.id}}">{{monoplaza.piloto}}</a>
+				</th>
+			</tr>
+			<tr>
+				<th>Numero de vueltas:</th>
+				<th>{{monoplaza.n_vuelta}}</th>
+			</tr>
+			<tr>
+				<th>Numero de pitstop:</th>
+				<th>{{monoplaza.num_pitstop}}</th>
+			</tr>
+			<tr>
+				<th rowspan="3">Fecha y hora del pitstop:</th>
+				<th>{{monoplaza.f_pitstop[0]}}</th>
+			</tr>
+			<tr>
+				<th>{{monoplaza.f_pitstop[1]}}</th>
+			</tr>
+			<tr>
+				<th>{{monoplaza.f_pitstop[2]}}</th>
+			</tr>
+			<tr>
+				<th colspan="2"><button (click)="goBack()">Volver atras</button></th>
+			</tr>
+	</table>

@@ -1,0 +1,20 @@
+<h2>Listado de monoplazas</h2>
+<p>Si desea saber información de un monoplaza, clica sobre su imagen</p>
+<table>
+	<tr>
+		<th>Numero</th>
+		<th>Modelo</th>
+		<th>Piloto</th>
+	</tr>
+	<tr *ngFor="let monoplaza of monoplazas">
+		<th>{{monoplaza.id}}</th>
+		<th>
+			<a routerLink="/detail/{{monoplaza.id}}">
+				<img src="{{monoplaza.url}}" alt="HTML5 Icon" width="200" />
+      </a>
+		</th>
+		<th>
+			{{monoplaza.piloto}}
+		</th>
+	</tr>
+</table>
